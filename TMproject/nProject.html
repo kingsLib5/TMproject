@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "nProject.css">
+    <script src="nProject.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showAddModal()">+ Add</button>
+    <table>
+        <tr>
+            <th>Customer</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Joining Date</th>
+            <th>Delivery Status</th>
+            <th>Action</th>
+        </tr>
+    </table>
+    
+    <ul id="list"></ul>
+    
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cancelEdit()">&times;</span>
+            <h2>Edit Entry</h2>
+            <input type="text" id="editCustomer" placeholder="Customer"><br>
+            <input type="email" id="editEmail" placeholder="Email"><br>
+            <input type="text" id="editPhone" placeholder="Phone"><br>
+            <input type="date" id="editJoiningDate" placeholder="Joining Date"><br>
+            <select id="editDeliveryStatus">
+                <option value="Delivered">Delivered</option>
+                <option value="Pending">Pending</option>
+            </select><br>
+            <!--<button onclick="saveEditedRow()">Save</button>-->
+        </div>
+    </div>
+    
+    <!-- Add Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal()">&times;</span>
+            <h2>Add New Entry</h2>
+            <input type="text" id="customer" placeholder="Customer"><br>
+            <input type="email" id="email" placeholder="Email"><br>
+            <input type="text" id="phone" placeholder="Phone"><br>
+            <input type="date" id="joiningDate" placeholder="Joining Date"><br>
+            <select id="deliveryStatus">
+                <option value="Delivered">Delivered</option>
+                <option value="Pending">Pending</option>
+            </select><br>
+            <input type="text" id="action" placeholder="Action"><br>
+            <button onclick="insertRow()">Insert</button>
+        </div>
+    </div>
+
+</body>
+</html>
