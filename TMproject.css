@@ -1,0 +1,53 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center; /* Center align text */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+input[type="text"] {
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center; /* Center align input */
+    border: 1px solid #ccc; /* Default border */
+}
+
+/* Reduce the width of specific input fields */
+#salePrice,
+#dealerPrice,
+#costPrice {
+    width: 80px; /* Adjust as needed */
+}
+
+/* Example of dynamic styling */
+input[type="text"]:focus {
+    border-color: blue; /* Change border color when input is focused */
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Add a shadow when input is focused */
+}
+
+/* Popup list styles */
+#popup-list {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    z-index: 1;
+}
+
+.popup-item {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add transition effect */
+}
+
+.popup-item:hover {
+    background-color: #f9f9f9; /* Change background color on hover */
+}
