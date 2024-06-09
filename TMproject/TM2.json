@@ -1,0 +1,194 @@
+[
+  {
+      "Item Name": "Apple iPhone 13",
+      "Description": "Latest iPhone model with advanced camera and processor",
+      "Qty": 5,
+      "Rate": 999.99,
+      "Discount": 5,
+      "Amount": 9499.95
+  },
+  {
+      "Item Name": "Samsung TV 55inch",
+      "Description": "Large screen TV with 4K resolution and HDR",
+      "Qty": 2,
+      "Rate": 1299.99,
+      "Discount": 10,
+      "Amount": 2339.98
+  },
+  {
+      "Item Name": "Nike Air Jordan Shoes",
+      "Description": "High-quality basketball shoes with advanced technology",
+      "Qty": 10,
+      "Rate": 149.99,
+      "Discount": 15,
+      "Amount": 1274.95
+  },
+  {
+      "Item Name": "Dell Laptop",
+      "Description": "Powerful laptop with Intel Core i7 processor and 16GB RAM",
+      "Qty": 3,
+      "Rate": 799.99,
+      "Discount": 8,
+      "Amount": 2159.97
+  },
+  {
+      "Item Name": "Canon EOS Camera",
+      "Description": "Professional camera with advanced features and high-quality images",
+      "Qty": 1,
+      "Rate": 1999.99,
+      "Discount": 12,
+      "Amount": 1759.99
+  },
+  {
+      "Item Name": "Sony Headphones",
+      "Description": "High-quality wireless headphones with long battery life",
+      "Qty": 8,
+      "Rate": 99.99,
+      "Discount": 20,
+      "Amount": 639.92
+  },
+  {
+      "Item Name": "LG Refrigerator",
+      "Description": "Large capacity refrigerator with advanced features and energy efficiency",
+      "Qty": 2,
+      "Rate": 2499.99,
+      "Discount": 15,
+      "Amount": 4249.98
+  },
+  {
+      "Item Name": "HP Printer",
+      "Description": "High-quality printer with advanced features and wireless connectivity",
+      "Qty": 5,
+      "Rate": 149.99,
+      "Discount": 10,
+      "Amount": 674.95
+  },
+  {
+      "Item Name": "Bose SoundLink Speaker",
+      "Description": "Portable Bluetooth speaker with exceptional sound quality",
+      "Qty": 4,
+      "Rate": 199.99,
+      "Discount": 10,
+      "Amount": 719.96
+  },
+  {
+      "Item Name": "Fitbit Charge 4",
+      "Description": "Fitness tracker with GPS and heart rate monitoring",
+      "Qty": 6,
+      "Rate": 129.99,
+      "Discount": 15,
+      "Amount": 662.94
+  },
+  {
+      "Item Name": "GoPro HERO9",
+      "Description": "Action camera with 5K video and advanced stabilization",
+      "Qty": 2,
+      "Rate": 399.99,
+      "Discount": 5,
+      "Amount": 759.98
+  },
+  {
+      "Item Name": "Apple Watch Series 7",
+      "Description": "Smartwatch with fitness tracking and cellular connectivity",
+      "Qty": 3,
+      "Rate": 429.99,
+      "Discount": 8,
+      "Amount": 1184.97
+  },
+  {
+      "Item Name": "Sony PlayStation 5",
+      "Description": "Next-gen gaming console with ultra-fast SSD and ray tracing",
+      "Qty": 4,
+      "Rate": 499.99,
+      "Discount": 5,
+      "Amount": 1899.96
+  },
+  {
+      "Item Name": "Microsoft Surface Pro 7",
+      "Description": "2-in-1 laptop with touch screen and detachable keyboard",
+      "Qty": 2,
+      "Rate": 899.99,
+      "Discount": 10,
+      "Amount": 1619.98
+  },
+  {
+      "Item Name": "Nikon D7500 Camera",
+      "Description": "DSLR camera with 20.9 MP sensor and 4K UHD video",
+      "Qty": 1,
+      "Rate": 1199.99,
+      "Discount": 12,
+      "Amount": 1055.99
+  },
+  {
+      "Item Name": "Logitech MX Master 3 Mouse",
+      "Description": "Advanced wireless mouse with customizable buttons",
+      "Qty": 5,
+      "Rate": 99.99,
+      "Discount": 5,
+      "Amount": 474.95
+  },
+  {
+      "Item Name": "JBL Flip 5 Speaker",
+      "Description": "Portable waterproof Bluetooth speaker",
+      "Qty": 6,
+      "Rate": 119.99,
+      "Discount": 20,
+      "Amount": 575.94
+  },
+  {
+      "Item Name": "Asus ROG Strix Laptop",
+      "Description": "High-performance gaming laptop with NVIDIA graphics",
+      "Qty": 2,
+      "Rate": 1499.99,
+      "Discount": 15,
+      "Amount": 2549.98
+  },
+  {
+      "Item Name": "Samsung Galaxy Tab S7",
+      "Description": "Android tablet with S Pen and 11-inch display",
+      "Qty": 3,
+      "Rate": 649.99,
+      "Discount": 10,
+      "Amount": 1754.97
+  },
+  {
+      "Item Name": "Apple AirPods Pro",
+      "Description": "Wireless earbuds with active noise cancellation",
+      "Qty": 10,
+      "Rate": 249.99,
+      "Discount": 10,
+      "Amount": 2249.91
+  },
+  {
+      "Item Name": "Amazon Echo Dot",
+      "Description": "Smart speaker with Alexa voice assistant",
+      "Qty": 8,
+      "Rate": 49.99,
+      "Discount": 15,
+      "Amount": 339.92
+  },
+  {
+      "Item Name": "Roku Streaming Stick",
+      "Description": "HD streaming device with voice remote",
+      "Qty": 4,
+      "Rate": 49.99,
+      "Discount": 10,
+      "Amount": 179.96
+  },
+  {
+      "Item Name": "Oculus Quest 2",
+      "Description": "Standalone VR headset with 256GB storage",
+      "Qty": 2,
+      "Rate": 399.99,
+      "Discount": 5,
+      "Amount": 759.98
+  },
+  {
+      "Item Name": "Dyson V11 Vacuum",
+      "Description": "Cordless vacuum with powerful suction and long battery life",
+      "Qty": 3,
+      "Rate": 599.99,
+      "Discount": 10,
+      "Amount": 161.76
+  }
+]
