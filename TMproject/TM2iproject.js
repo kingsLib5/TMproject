@@ -1,4 +1,6 @@
 // TM2project.js
+
+// Get the form elements
 const ItemNameInput = document.getElementById('ItemName');
 const DescriptionInput = document.getElementById('Description');
 const QtyInput = document.getElementById('Qty');
@@ -8,6 +10,7 @@ const AmountInput = document.getElementById('Amount');
 const addButton = document.getElementById('addButton');
 const itemTable = document.getElementById('itemTable').getElementsByTagName('tbody')[0];
 const popupList = document.getElementById('popupList');
+const TotalAmountInput = document.getElementById('TotalAmount');
 
 let data = [];
 
@@ -19,6 +22,7 @@ fetch('TM101.json')
     })
     .catch(error => console.error('Error fetching JSON data:', error));
 
+// Event listener for Item Name input for autocomplete functionality
 ItemNameInput.addEventListener('input', () => {
     const inputValue = ItemNameInput.value.toLowerCase();
     popupList.innerHTML = '';
@@ -32,7 +36,7 @@ ItemNameInput.addEventListener('input', () => {
                 QtyInput.value = item.balance;
                 RateInput.value = item.salePrice;
                 DiscountInput.value = item.dealerPrice;
-                AmountInput.value = item.costPrice;
+                calculateAmount(); // Update amount calculation without discount
                 popupList.style.display = 'none';
             });
             popupList.appendChild(listItem);
@@ -47,12 +51,47 @@ ItemNameInput.addEventListener('input', () => {
     }
 });
 
+// Hide popup list when clicking outside the Item Name input
 document.addEventListener('click', (e) => {
     if (e.target !== ItemNameInput) {
         popupList.style.display = 'none';
     }
 });
 
+// Function to calculate amount without discount
+function calculateAmount() {
+    const qty = parseFloat(QtyInput.value) || 0;
+    const rate = parseFloat(RateInput.value) || 0;
+    const amount = qty * rate; // Exclude discount from calculation
+    AmountInput.value = amount.toFixed(2);
+}
+
+// Add event listeners for quantity and rate inputs to auto-calculate the amount
+QtyInput.addEventListener('input', calculateAmount);
+RateInput.addEventListener('input', calculateAmount);
+
+// Function to calculate total amount
+function calculateTotalAmount() {
+    let total = 0;
+    const rows = itemTable.rows;
+    for (let i = 0; i < rows.length; i++) {
+        const amountCell = rows[i].cells[5];
+        if (amountCell) {
+            const amount = parseFloat(amountCell.textContent) || 0;
+            total += amount;
+        }
+    }
+    TotalAmountInput.value = total.toFixed(2);
+}
+
+// Function to delete a row
+function deleteRow(button) {
+    const row = button.closest('tr'); // Find the closest parent <tr> of the button
+    row.remove(); // Remove the row
+    calculateTotalAmount(); // Recalculate total amount after deletion
+}
+
+// Event listener for Add button to add item to the table
 addButton.addEventListener('click', () => {
     const newRow = itemTable.insertRow(-1);
     const cells = [
@@ -61,18 +100,25 @@ addButton.addEventListener('click', () => {
         newRow.insertCell(2),
         newRow.insertCell(3),
         newRow.insertCell(4),
-        newRow.insertCell(5)
+        newRow.insertCell(5),
+        newRow.insertCell(6) // Cell for delete button
     ];
     cells[0].innerHTML = ItemNameInput.value;
     cells[1].innerHTML = DescriptionInput.value;
     cells[2].innerHTML = QtyInput.value;
     cells[3].innerHTML = RateInput.value;
-    cells[4].innerHTML = DiscountInput.value;
+    cells[4].innerHTML = DiscountInput.value; // Still display discount in the table
     cells[5].innerHTML = AmountInput.value;
+    cells[6].innerHTML = '<button class="delete-button" onclick="deleteRow(this)">x</button>'; // Delete button with class
+
+    // Clear form fields
     ItemNameInput.value = '';
     DescriptionInput.value = '';
     QtyInput.value = '';
     RateInput.value = '';
     DiscountInput.value = '';
     AmountInput.value = '';
+
+    // Calculate the total amount
+    calculateTotalAmount();
 });
