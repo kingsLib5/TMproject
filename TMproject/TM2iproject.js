@@ -1,5 +1,3 @@
-// TM2project.js
-
 // Get the form elements
 const ItemNameInput = document.getElementById('ItemName');
 const DescriptionInput = document.getElementById('Description');
@@ -36,7 +34,7 @@ ItemNameInput.addEventListener('input', () => {
                 QtyInput.value = item.balance;
                 RateInput.value = item.salePrice;
                 DiscountInput.value = item.dealerPrice;
-                calculateAmount(); // Update amount calculation without discount
+                calculateAmount();
                 popupList.style.display = 'none';
             });
             popupList.appendChild(listItem);
@@ -58,17 +56,19 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Function to calculate amount without discount
+// Function to calculate amount
 function calculateAmount() {
     const qty = parseFloat(QtyInput.value) || 0;
     const rate = parseFloat(RateInput.value) || 0;
-    const amount = qty * rate; // Exclude discount from calculation
+    const discount = parseFloat(DiscountInput.value) || 0;
+    const amount = (qty * rate) - discount;
     AmountInput.value = amount.toFixed(2);
 }
 
-// Add event listeners for quantity and rate inputs to auto-calculate the amount
+// Add event listeners for quantity, rate, and discount inputs to auto-calculate the amount
 QtyInput.addEventListener('input', calculateAmount);
 RateInput.addEventListener('input', calculateAmount);
+DiscountInput.addEventListener('input', calculateAmount);
 
 // Function to calculate total amount
 function calculateTotalAmount() {
@@ -86,9 +86,9 @@ function calculateTotalAmount() {
 
 // Function to delete a row
 function deleteRow(button) {
-    const row = button.closest('tr'); // Find the closest parent <tr> of the button
-    row.remove(); // Remove the row
-    calculateTotalAmount(); // Recalculate total amount after deletion
+    const row = button.closest('tr');
+    row.parentNode.removeChild(row);
+    calculateTotalAmount();
 }
 
 // Event listener for Add button to add item to the table
@@ -101,15 +101,15 @@ addButton.addEventListener('click', () => {
         newRow.insertCell(3),
         newRow.insertCell(4),
         newRow.insertCell(5),
-        newRow.insertCell(6) // Cell for delete button
+        newRow.insertCell(6)
     ];
     cells[0].innerHTML = ItemNameInput.value;
     cells[1].innerHTML = DescriptionInput.value;
     cells[2].innerHTML = QtyInput.value;
     cells[3].innerHTML = RateInput.value;
-    cells[4].innerHTML = DiscountInput.value; // Still display discount in the table
+    cells[4].innerHTML = DiscountInput.value;
     cells[5].innerHTML = AmountInput.value;
-    cells[6].innerHTML = '<button class="delete-button" onclick="deleteRow(this)">x</button>'; // Delete button with class
+    cells[6].innerHTML = '<button class="delete-button" onclick="deleteRow(this)">x</button>';
 
     // Clear form fields
     ItemNameInput.value = '';
